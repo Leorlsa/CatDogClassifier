@@ -35,7 +35,7 @@ FlaskImageClassifier é um aplicativo web desenvolvido em Flask que permite o up
     python app.py
     ```
 
-5. Acesse o aplicativo em `http://127.0.0.1:5001/`.
+5. Acesse o aplicativo em `http://127.0.0.1:5000/`.
 
 ## Estrutura do Projeto
 - `app.py`: Script principal do Flask.
