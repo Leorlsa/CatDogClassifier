@@ -3,7 +3,6 @@ from keras.preprocessing import image
 import numpy as np
 import tensorflow as tf
 import os
-import socket
 
 app = Flask(__name__)
 model = tf.keras.models.load_model('cats_dogs_model.h5')
