@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Classificação</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .result {
+            margin-top: 20px;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Resultado da Classificação</h1>
+        <div class="result text-center mt-4">
+            <p class="display-4">{{ prediction }}</p>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Classificar outra imagem</a>
+        </div>
+    </div>
+</body>
+</html>

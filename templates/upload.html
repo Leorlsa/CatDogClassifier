@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload de Imagem</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .preview {
+            display: none;
+            margin-top: 20px;
+        }
+        .preview img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .preview.visible {
+            display: block;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+        function previewFile() {
+            var preview = document.getElementById('preview');
+            var file = document.querySelector('input[type=file]').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function() {
+                preview.src = reader.result;
+                document.querySelector('.preview').classList.add('visible');
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Upload de Imagem para Classificação</h1>
+        <form action="/" method="post" enctype="multipart/form-data" class="mt-4">
+            <div class="form-group">
+                <input type="file" name="file" class="form-control-file" onchange="previewFile()">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Classificar</button>
+        </form>
+        <div class="preview mt-4">
+            <h2>Preview:</h2>
+            <img id="preview" src="" alt="Preview da Imagem">
+        </div>
+    </div>
+</body>
+</html>
